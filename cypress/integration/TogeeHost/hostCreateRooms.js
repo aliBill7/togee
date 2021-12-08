@@ -26,7 +26,7 @@ var hostNames = ['John','Monica','Sara','Peter','George','Hania','Asma','Naseem'
 	describe ('Host_Creates Rooms', function(){
 	it('Creates public room', function() {
 
-		cy.visit(link, statusCodeFalse)
+		cy.visit(link)
 		cy.get(pluginBtn).should('be.visible')
 		cy.get(pluginBtn).click()
 		cy.get(roomTypeContainer).should('be.visible')
@@ -36,10 +36,7 @@ var hostNames = ['John','Monica','Sara','Peter','George','Hania','Asma','Naseem'
 		cy.get('.input_container').find('input').type(hostNames[ Math.floor(Math.random()* hostNames.length)])
 		cy.get(createRoomBtn).should('be.visible')
 		cy.get(createRoomBtn).click()
-		// expect(true).to.equal(true)
-		// cy.go('back') OR cy.go(-1)
-		// cy.wait(200)
-		// cy.go('forward') OR cy.go(1)
+		
 	})
 
 	it('Creates private room', function() {
